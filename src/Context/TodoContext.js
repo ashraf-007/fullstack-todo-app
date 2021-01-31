@@ -14,7 +14,7 @@ export const TodoProvider = ({children})=> {
    //Actions 
    async function getTodos() {
     try {
-        const { data } = await axios.get('https://todo-app-server1.herokuapp.com/todos');
+        const { data } = await axios.get('https://todo-app-server2.herokuapp.com/todos');
 
         dispatch({
             type:'GET_TODOS',
@@ -33,7 +33,7 @@ async function  addTodo(todo) {
     }
           try {
 
-         await axios.post('https://todo-app-server1.herokuapp.com/todos' , todo , config );
+         await axios.post('https://todo-app-server2.herokuapp.com/todos' , todo , config );
          dispatch({
             type:'ADD_TODO',
             payload : todo
@@ -45,7 +45,7 @@ async function  addTodo(todo) {
 }
 async function deleteTodo(id) {
 try {
-    await axios.delete(`https://todo-app-server1.herokuapp.com/todos/${id}`)
+    await axios.delete(`https://todo-app-server2.herokuapp.com/todos/${id}`)
     dispatch({
      type:'DELETE_TODO',
      payload: id
@@ -62,7 +62,7 @@ async function toggleCompleted(id , update){
     }
 
     try {
-       const { data } =  await axios.patch( `https://todo-app-server1.herokuapp.com/todos/${id} `, update , config);
+       const { data } =  await axios.patch( `https://todo-app-server2.herokuapp.com/todos/${id} `, update , config);
 
         dispatch({
             type:'TOGGLE_COMPLETED',
@@ -86,7 +86,7 @@ function getItems(items){
 }
  async function deleteCompleted(){
     try {
-         const response = await axios.delete('https://todo-app-server1.herokuapp.com/todos');
+         const response = await axios.delete('https://todo-app-server2.herokuapp.com/todos');
          dispatch({
              type:'DELETE_ALL',
              payload: response 

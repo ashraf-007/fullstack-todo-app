@@ -65,6 +65,21 @@ body {
 .todo-section{
   width:45%
 }
+@media (max-width:1043px){
+  .todo-section , .header {
+    width:80%
+}
+
+}
+@media (max-width:790px){
+  .todo-section{
+       width:90%
+  }
+  .header {
+   
+    width:90%
+  }
+}
 .main-input {
   height: 50px;
   width: 100%;
