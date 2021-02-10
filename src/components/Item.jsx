@@ -15,6 +15,7 @@ function Item({ onComplete, todo , dark , deleteTodo , key , index , provided}) 
           className="todo-item" >
            <div className="todo-text">
              <div className="container">
+               <label className="label">
              <input
              
                onClick={onComplete}
@@ -23,6 +24,8 @@ function Item({ onComplete, todo , dark , deleteTodo , key , index , provided}) 
                name="checkbox"
                id='checkbox'
               />
+              <span className="checkmark"></span>
+              </label>
              <p id="paragraph"
                style={{
                  textDecoration: todo.completed ? "line-through" : "none"
